@@ -1,10 +1,10 @@
 public class empWage
 {
+	public static final int isFullTime = 1;
+        public static final int isPartTime = 2;
 	public static void main(String[] args)
 	{
 	System.out.println("Welcome to Employee Wage Calculation Program on Master Branch");
-   	int isFullTime = 1;
-	int isPartTime = 2;
 	int empRatePrHr = 20;
 	int empHr = 0;
 	int perDaySalary = 0;
@@ -12,13 +12,13 @@ public class empWage
     	System.out.println(empCheck);
 	switch ((int)empCheck)
 	{
-		case 1 :
+		case isFullTime :
 			empHr = 8;
 			System.out.println("Full time Employee");
 			perDaySalary = empRatePrHr * empHr;
 			System.out.println("Employee per day salary = "+perDaySalary);
 			break;
-		case 2 :
+		case isPartTime :
 			empHr = 4;
 			System.out.println("Part time Employee");
 			perDaySalary = empRatePrHr * empHr;
