@@ -10,9 +10,10 @@ public class empWage
 	int perDaySalary = 0;
 	int totalWorkingDays = 20;
 	int monthlyWage = 0;
-	for (int i = 1;i <= totalWorkingDays;i++)
+	int monthlyHrs = 0;
+	for (int i = 1;i <= totalWorkingDays && monthlyHrs < 100;i++)
 	{
-    		double empCheck=(int)Math.floor(Math.random() * 10) % 3;
+    		int empCheck=(int)Math.floor(Math.random() * 10) % 3;
 		switch ((int)empCheck)
 		{
 			case isFullTime :
@@ -25,7 +26,11 @@ public class empWage
 				empHr = 0;
 				break;
 		}//switch case
+		monthlyHrs = monthlyHrs + empHr;
+		System.out.println("Working Day: "+i);
+		System.out.println("Total Working Hrs: "+monthlyHrs);
 		perDaySalary =  empRatePrHr * empHr;
+		System.out.println(perDaySalary);
 		monthlyWage = perDaySalary + monthlyWage;
 	}//for loop
 	System.out.println("Monthly Wage of employee is: "+monthlyWage);
