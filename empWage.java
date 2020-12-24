@@ -8,27 +8,26 @@ public class empWage
 	int empRatePrHr = 20;
 	int empHr = 0;
 	int perDaySalary = 0;
-    	int empCheck=(int)Math.floor(Math.random() * 10) % 3;
-    	System.out.println(empCheck);
-	switch ((int)empCheck)
+	int totalWorkingDays = 20;
+	int monthlyWage = 0;
+	for (int i = 1;i <= totalWorkingDays;i++)
 	{
-		case isFullTime :
-			empHr = 8;
-			System.out.println("Full time Employee");
-			perDaySalary = empRatePrHr * empHr;
-			System.out.println("Employee per day salary = "+perDaySalary);
-			break;
-		case isPartTime :
-			empHr = 4;
-			System.out.println("Part time Employee");
-			perDaySalary = empRatePrHr * empHr;
-			System.out.println("Employee per day salary = "+perDaySalary);
-			break;
-		default :
-			empHr = 0;
-			System.out.println("Employee is Absent");
-			perDaySalary = 0;
-			System.out.println("Employee per day salary = "+perDaySalary);
-	}//switch case
+    		double empCheck=(int)Math.floor(Math.random() * 10) % 3;
+		switch ((int)empCheck)
+		{
+			case isFullTime :
+				empHr = 8;
+				break;
+			case isPartTime :
+				empHr = 4;
+				break;
+			default :
+				empHr = 0;
+				break;
+		}//switch case
+		perDaySalary =  empRatePrHr * empHr;
+		monthlyWage = perDaySalary + monthlyWage;
+	}//for loop
+	System.out.println("Monthly Wage of employee is: "+monthlyWage);
 	}//main function
 }//class
